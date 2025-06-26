@@ -1,0 +1,76 @@
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  span {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+  }
+}
+
+.mentor {
+  background-color: #e0f7fa;
+  color: #00796b;
+}
+
+.student {
+  background-color: #fce4ec;
+  color: #c2185b;
+}
+
+.requestBtn {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  margin-top: 0.5rem;
+
+  &:hover {
+    background-color: #0097a7;
+  }
+}
+
+.messageBtn {
+  display: inline-block;
+  text-align: center;
+  margin-top: 0.5rem;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #388e3c;
+  }
+}
+
+.success {
+  color: #388e3c;
+  font-weight: bold;
+}

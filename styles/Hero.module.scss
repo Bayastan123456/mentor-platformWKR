@@ -1,0 +1,36 @@
+.hero {
+  background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+  color: #ffffff;
+  padding: 5rem 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    max-width: 800px;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #cccccc;
+    }
+
+    .ctaBtn {
+      background-color: #00bcd4;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #0097a7;
+        color: #fff;
+      }
+    }
+  }
+}

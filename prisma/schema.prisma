@@ -1,0 +1,48 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String
+  email    String   @unique
+  password String
+  role     String?
+  about    String?  // необязательно
+  skills   String?  // необязательно
+  goal     String?  // необязательно
+
+  messagesSent     Message[] @relation("SentMessages")
+  messagesReceived Message[] @relation("ReceivedMessages")
+
+  requestsSent     Request[] @relation("UserSentRequests")      // ✅ обратная связь
+  requestsReceived Request[] @relation("UserReceivedRequests")  // ✅ обратная связь
+}
+
+model Message {
+  id         Int      @id @default(autoincrement())
+  text       String
+  createdAt  DateTime @default(now())
+
+  sender     User     @relation("SentMessages", fields: [senderId], references: [id])
+  senderId   Int
+
+  receiver   User     @relation("ReceivedMessages", fields: [receiverId], references: [id])
+  receiverId Int
+}
+
+model Request {
+  id        Int      @id @default(autoincrement())
+  fromId    Int
+  toId      Int
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+
+  from      User     @relation("UserSentRequests", fields: [fromId], references: [id])
+  to        User     @relation("UserReceivedRequests", fields: [toId], references: [id])
+}
