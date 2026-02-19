@@ -33,7 +33,7 @@ export default function RegisterForm() {
       setError(err.message || "Ошибка при регистрации");
     }
   };
-  console.log("Отправка формы:", { name, email, password });
+  console.log("Отправка формы:", { name, email });
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <h2>Регистрация</h2>
